@@ -1,0 +1,30 @@
+CRUD WITH ORM 
+
+---Insert a Record
+
+Courses.objects.create(title='Mastery in python',description='Python advanced level courses')
+
+
+Book.objects.create(title='Goat life',author='benyamin',
+                       genre='Novel',price='150',
+                       )
+
+
+---Orm query---
+
+orm query for fetch all records --- Book.objects.all()
+
+orm query for fetch records with id-5 --- Book.objects.get(id=5)
+
+orm query for fetch all beginner level courses --- Book.objects.filter(level='Beginner')
+
+orm query for fetch all courses with price 35000 --- Book.objects.filter(price=35000)
+
+orm query for fetch records with price greater than or equal to 50000 --- Book.objects.filter(price__lte=50000)
+
+orm query for fetch all records excluding level=beginner --- Book.objects.filter().exclude(level='Beginner')
+
+courses --- seacrh query
+
+filter beginner level courses and intermate level courses --- Book.objects.filter(level__in=['Beginner', 'Intermediate'])
+

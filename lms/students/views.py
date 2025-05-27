@@ -25,7 +25,7 @@ class StudentRegisterView(View):
 
         return render(request,'students/student-register.html',context=data)
     
-def post(self, request, *args , **kwrgs):
+    def post(self, request, *args , **kwrgs):
 
         profile_form = ProfileForm(request.POST)
 

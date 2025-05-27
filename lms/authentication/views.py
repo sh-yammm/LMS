@@ -64,9 +64,11 @@ class RegisterChoicesView(View):
 
         role = request.POST.get('role')
 
-        if role == 'Student':
+        if role == 'student':
+
             return redirect('student-register')
         
-        elif role == 'Instructor':
+        elif role == 'instructor':
+            
             return redirect('home')
 

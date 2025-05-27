@@ -51,3 +51,22 @@ class LogoutView(View):
         logout(request)
 
         return redirect('courses_list')   
+
+
+# for different user roles, you can create separate views or use a single view with conditional logic based on the user role.
+class RegisterChoicesView(View):
+
+    def get(self, request, *args, **kwargs):
+
+        return render(request, 'authentication/register-choices.html')
+    
+    def post(self, request, *args, **kwargs):
+
+        role = request.POST.get('role')
+
+        if role == 'Student':
+            return redirect('student-register')
+        
+        elif role == 'Instructor':
+            return redirect('home')
+

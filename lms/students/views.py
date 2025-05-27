@@ -6,6 +6,8 @@ from django.contrib.auth.hashers import make_password
 
 from django.db import transaction
 
+from lms.utility import send_email
+
 # Create your views here.
 
 class StudentRegisterView(View):
@@ -62,8 +64,18 @@ def post(self, request, *args , **kwrgs):
 
                     student.name = f' {profile.first_name} {profile.last_name}'
 
-
                     student.save()
+                    
+                    # Send email notification
+                    subject = 'Successfully registered'
+                    recipient = student.profile.email
+                    template = 'email/success-registration.html'
+                    context = {
+                        'name': student.name,
+                        'email': student.profile.email,
+                        'password': student.profile.password
+                    }
+                    send_email(subject, recipient, template, context)
 
 
                     return redirect('login')

@@ -63,6 +63,16 @@
             <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
             <h1 class="mb-5">COURSES</h1>
         </div>
+        
+         <!-- search bar section  -->
+        <div class="row justify-content-end">
+            <div class="col-6 my-4">
+                <form action="{% url 'course-list' %}" method="get">
+                <input class="form-control" type="text" placeholder="search courses" name="query"{% if query %} value="{{query}}" {% endif %}>
+                </form>
+        </div>
+        <!-- searchbar end  -->
+
         <div class="row justify-content-end">
             <div class="col-6 my-4">
                 <form action="{% url 'courses_list'%}">

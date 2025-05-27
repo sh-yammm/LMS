@@ -62,8 +62,8 @@ class InstructorCoursesView(View):
 
     def get(self, request,*args, **kwargs):
 
-        instructor = Instructors.objects.get(id=1)
-
+        instructor = Instructors.objects.get(profile= request.user)
+        
         courses = Course.objects.filter(instructor=instructor)
 
         query = request.GET.get('query')

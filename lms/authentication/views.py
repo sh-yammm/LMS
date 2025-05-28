@@ -70,5 +70,5 @@ class RegisterChoicesView(View):
         
         elif role == 'instructor':
             
-            return redirect('home')
+            return redirect('instructor-register')
 

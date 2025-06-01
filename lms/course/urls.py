@@ -6,6 +6,8 @@ urlpatterns = [
 
     path('courses-list/', views.CoursesListView.as_view(), name='courses_list'),
 
+    path('course-detail/<str:uuid>/',views.CoursesDetailView.as_view(), name ='course-detail'),
+
     path('home/',views.HomeView.as_view(), name='home'),
 
     path('instructor/', views.InstructorCoursesView.as_view(), name='instructor_courses'),

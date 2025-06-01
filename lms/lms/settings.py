@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'instructors',
     'authentication',
     'students',
+    'payments'
 ]
 
 MIDDLEWARE = [

@@ -45,6 +45,20 @@ class CoursesListView(View):
         return render(request, 'courses/courses_list.html',context=data)
 
     
+class CoursesDetailView(View):
+
+    def get(self, request , *args , **kwargs):
+
+        uuid = kwargs.get('uuid')
+
+        course = Course.objects.get(uuid=uuid)
+
+        data = {
+            'course' : course
+        }
+
+        return render(request,'courses/course-detail.html', context= data)
+
 class HomeView(View):
 
     def get(self, request):

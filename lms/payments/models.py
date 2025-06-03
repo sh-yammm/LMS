@@ -7,7 +7,7 @@ class StatusChoices(models.TextChoices):
 
     PENDING = 'Pending','Pending'
 
-    SUCCESS = 'Sucess','Sucess'
+    SUCCESS = 'Success','Success'
 
     FAILED = 'Failed','Failed'
 
